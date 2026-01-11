@@ -8,3 +8,15 @@ pub fn load_env_variables() -> (String, String, String) {
     let grant_type = env::var("GRANT_TYPE").unwrap();
     (client_id, client_secret, grant_type)
 }
+
+#[cfg(test)]
+mod tests {
+
+    use crate::load_env_variables;
+
+    #[test]
+    fn test_load_env_variables() {
+        let (client_id, 
+            client_secret, grant_type) = load_env_variables();
+    }
+}
