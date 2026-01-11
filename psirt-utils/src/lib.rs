@@ -1,14 +1,10 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+use std::env;
+use dotenv::dotenv;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn load_env_variables() -> (String, String, String) {
+    dotenv().ok();
+    let client_id = env::var("CLIENT_ID").unwrap();
+    let client_secret = env::var("CLIENT_SECRET").unwrap();
+    let grant_type = env::var("GRANT_TYPE").unwrap();
+    (client_id, client_secret, grant_type)
 }
