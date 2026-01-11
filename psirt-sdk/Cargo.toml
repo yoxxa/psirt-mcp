@@ -5,3 +5,9 @@ authors.workspace = true
 edition.workspace = true
 
 [dependencies]
+psirt_utils = { workspace = true }
+
+tokio = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
