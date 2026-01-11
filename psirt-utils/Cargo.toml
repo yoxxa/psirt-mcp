@@ -6,3 +6,4 @@ edition.workspace = true
 
 [dependencies]
 dotenv = { workspace = true }
+reqwest = { workspace = true }
